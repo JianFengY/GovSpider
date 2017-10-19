@@ -17,6 +17,8 @@ msgList = html.xpath('//div[@class="wzsl"]/div')
 with open('test.txt', 'w', encoding='gbk') as f:
     i = 1
     while i <= len(msgList):
+#         two ways:
+#         message = html.xpath('//div[@class="wzsl"]/div[' + str(i) + ']/div/p/span/preceding-sibling::text()')
         message = html.xpath('//div[@class="wzsl"]/div[' + str(i) + ']/div/p/text()')
         print(message[0])
         f.write(message[0]+'\n')
